@@ -12,8 +12,14 @@ spec:
         - containerPort: 8081
       env:
         - name: ME_CONFIG_MONGODB_AUTH_USERNAME
-          value: root
+          valueFrom: 
+            secretKeyRef: 
+              name: mongo-creds
+              key: MONGO_INITDB_ROOT_USERNAME
         - name: ME_CONFIG_MONGODB_AUTH_PASSWORD
-          value: password
+          valueFrom: 
+            secretKeyRef: 
+              name: mongo-creds
+              key: MONGO_INITDB_ROOT_PASSWORD
         - name: ME_CONFIG_MONGODB_SERVER
           value: mongo-service

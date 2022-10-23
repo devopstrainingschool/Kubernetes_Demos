@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Creds hard-coded for Demo only!
-const mongoURL = "mongodb://root:password@mongo-service:27017";
+const mongoURL = "mongodb://cm9vdA==:cGFzc3dvcmQ=@mongo-service:27017";
 const mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 const dbName = "contacts-db";
 
