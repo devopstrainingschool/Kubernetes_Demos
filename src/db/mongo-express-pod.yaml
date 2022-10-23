@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongo-express
+  labels: 
+    app: mongo-express
+spec:
+  containers:
+    - name: mongo-express
+      image: mongo-express
+      ports:
+        - containerPort: 8081
+      env:
+        - name: ME_CONFIG_MONGODB_AUTH_USERNAME
+          value: root
+        - name: ME_CONFIG_MONGODB_AUTH_PASSWORD
+          value: password
+        - name: ME_CONFIG_MONGODB_SERVER
+          value: mongo-service
